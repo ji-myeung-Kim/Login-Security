@@ -1,0 +1,16 @@
+스피링 시큐리티:
+서큐리티 세션 안에
+Authentication객체만 들어올 수 있다.필요할대 Controller에서 DependancyInjection가능
+Authentication에 들어갈 수 있는 객체 2개가 있다.
+1. userDetails
+2. oauth2User
+
+Authentication이 들어온 순간 로그인이 된 거....
+userDetails -> 일반 로그인
+OAuth2User -> OAuth로그인
+
+
+userDtails, OAuth2User 는 인터페이스
+PrincipalDetails implements UserDetails, OAuth2User 구문은 인터페이스를 상속받기 때문에
+implements사용 (extends X) implemente로 상속을 받을때는 반드시 재정의를 해줘야 함 다중 상속이 가능하다extends는 불가
+No Default consturct for entity에러 떳을경우 -> 에노테이션에 NoargsConstructor...추가()
